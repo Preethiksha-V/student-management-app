@@ -31,7 +31,11 @@ def view_students():
         print(f"Name: {details['name']}")
         print(f"Department: {details['department']}")
         print(f"Marks: {details['marks']}")
+        grade = calculate_grade(details['marks'])
+        print(f"Grade: {grade}")
+
         print("------------------------")
+
 
 def search_student():
     roll_no = input("Enter Roll Number to search: ")
@@ -65,6 +69,17 @@ def main_menu():
             break
         else:
             print("Invalid choice. Please try again.")
+
+def calculate_grade(marks):
+    if marks >= 90:
+        return "A"
+    elif marks >= 75:
+        return "B"
+    elif marks >= 60:
+        return "C"
+    else:
+        return "D"
+
 
 if __name__ == "__main__":
     main_menu()
